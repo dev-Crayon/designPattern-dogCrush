@@ -14,6 +14,14 @@
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
+# ALL
+/.idea
+
+# Jejune
+/jejune/.idea
+/jejune/kotlin/.idea
+/jejune/kotlin/.kotlin
+
 # Package Files #
 *.jar
 *.war
