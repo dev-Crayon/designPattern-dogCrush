@@ -4,6 +4,21 @@
 
 ### 구현
 CarStateSubject.Kt는 옵저버 패턴을 구현한 코드이다. CarStateSubject는 CarStateObserver를 등록하고 제거하는 메서드를 가지고 있다. CarStateObserver는 상태 변화가 있을 때 호출되는 메서드를 가지고 있다.
+이때 옵저버에게 노티가 갈때 모든 옵저버에게 가는 것이 아니라 상태에 맞는 옵저버에게만 가도록 구현하였다.
+
+```kotlin
+// 인터페이스
+interface CarStateObserver {
+    val monitoringStateType: CarStateType  // 모니터링하는 상태 유형
+    fun update(carState: CarState)
+}
+
+// 상태에 맞는 옵저버 관리
+override fun notifyObservers(stateType: CarStateType) {
+        observers.filter { it.monitoringStateType == stateType }
+            .forEach { it.update(currentState) }
+    }
+```
 
 ### 사용
 1. CarStateSubject를 구현한 Car 클래스를 생성한다.
