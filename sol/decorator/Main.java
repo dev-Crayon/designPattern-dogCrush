@@ -21,7 +21,7 @@ public class Main {
         List<Car> cars = List.of(mySonata, myBentz);
         for (Car car : cars) {
             if (car instanceof SunRoof) {
-                car.assemble("추가 옵션 : 2 doors");
+//                car.assemble("추가 옵션 : 2 doors");
             }
         }
     }
