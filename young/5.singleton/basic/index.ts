@@ -14,7 +14,6 @@ class BasicSingleton {
   }
 }
 
-// 사용 예
 const instance1 = BasicSingleton.getInstance();
 const instance2 = BasicSingleton.getInstance();
 console.log(instance1 === instance2);
